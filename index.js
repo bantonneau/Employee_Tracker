@@ -1,5 +1,6 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
+
 //Connect to database
 const db = mysql.createConnection(
     {
@@ -17,26 +18,25 @@ function prompt() {
     inquirer
         .prompt([
             {
-                type: 'input',
-                name: 'name',
-                message: 'What is your name?',
-            },
-            {
-                type: 'checkbox',
-                message: 'What languages do you know?',
-                name: 'stack',
-                choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-            },
-            {
                 type: 'list',
-                message: 'What is your preferred method of communication?',
-                name: 'contact',
-                choices: ['email', 'phone', 'telekinesis'],
+                message: 'What would you like to do?',
+                name: 'choosefunc',
+                choices: ['View all departments', 'View all roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'Update an employee role'],
             },
         ])
-        .then((data) => {
-            viewDepartment()
-            console.log(data);
+        .then((answers) => {
+            switch (answers.choosefunc) {
+                case "View all departments":
+                    viewDepartment()
+                    break;
+                case "View all roles":
+                    viewRoles()
+                    break;
+                case "View all employees":
+                    viewEmployees()
+                    break;
+            }
+            console.log(answers);
         });
 };
 
@@ -44,7 +44,30 @@ function viewDepartment() {
     const sql = `SELECT * FROM department`;
     db.query(sql, (err, result) => {
         if (err) {
-            //   res.status(400).json({ error: err.message });
+            console.log(err)
+            return;
+        }
+        console.table(result)
+        prompt();
+    });
+}
+
+function viewRoles() {
+    const sql = `SELECT * FROM role`;
+    db.query(sql, (err, result) => {
+        if (err) {
+            console.log(err)
+            return;
+        }
+        console.table(result)
+        prompt();
+    });
+}
+
+function viewEmployees() {
+    const sql = `SELECT * FROM employee`;
+    db.query(sql, (err, result) => {
+        if (err) {
             console.log(err)
             return;
         }
