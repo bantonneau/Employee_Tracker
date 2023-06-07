@@ -48,7 +48,6 @@ function viewDepartment() {
             return;
         }
         console.table(result)
-        prompt();
     });
 }
 
