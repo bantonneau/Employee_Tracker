@@ -22,6 +22,9 @@ This project is a command-line application that interacts with user input to man
 4. Set up the database using the provided schema in your MySQL client.
 
 ## Usage
+
+[Video Tutorial](https://drive.google.com/file/d/12tYyxaFsXtM8KS8Pe8GqHA7Gj5-muEy3/view)
+
 To start the application, open a terminal in the project directory and run the following command:
 ```
 node index.js
