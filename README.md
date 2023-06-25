@@ -1,5 +1,7 @@
 # Employee Management System
 
+![License Badge](https://img.shields.io/badge/license-MIT-green)
+
 ## Description
 This project is a command-line application that interacts with user input to manage an employee database. The application allows users to view all departments, roles, and employees, add a new department, role or employee, and update an existing employee's role. This is all managed using a MySQL database to store and retrieve data.
 
@@ -42,5 +44,5 @@ For contributions, please create a new issue or make a pull request in the GitHu
 ## Questions
 If you have any questions about the application, open an issue or want to discuss further, please reach out via email or through my GitHub profile.
 
-- GitHub: [Your_Github_Profile](https://github.com/Your_Github_Profile)
-- Email: your.email@example.com
+- GitHub: [@bantonneau](https://github.com/bantonneau)
+- Email: [benantonn@gmail.com](mailto:benantonn@gmail.com)
